@@ -45,6 +45,14 @@ app.post("/artists", (req,res)=>{
   res.status(201).send(addArtist(data))
 })
 
+app.get("/artists/latest", (req,res)=>{
+  res.status(200).send(getLatestArtist())
+})
+
+app.get("/artists/latest/albums", (req,res)=>{
+  res.status(200).send(getAlbumsForLatestArtist())
+})
+
 // DO NOT MODIFY
 if (require.main === module) {
   const port = 8000;
