@@ -36,6 +36,15 @@ app.post("/", (req,res)=>{
   res.send("Received Request")
 })
 
+app.get("/artists", (req,res)=>{
+  res.status(200).send(getAllArtists())
+})
+
+app.post("/artists", (req,res)=>{
+  data = req.body
+  res.status(201).send(addArtist(data))
+})
+
 // DO NOT MODIFY
 if (require.main === module) {
   const port = 8000;
